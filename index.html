@@ -1,0 +1,74 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>export-market-demo</title>
+</head>
+<style>
+* {
+    text-align: center;
+    padding: 10px;
+}
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    margin: 0 auto;
+
+}
+
+</style>
+<script src="js/jquery-1.12.3.min.js"></script>
+<script src="js/data.js"></script>
+<script>
+
+// export json to HTML table
+
+$(document).ready(function() {
+    // $('#myTable tbody').append('<tr class="child"><td>blahblah</td></tr>');
+
+    tr = $('<tr/>');
+    tr.append("<td>" + "_id" + "</td>");
+    tr.append("<td>" + "country" + "</td>");
+    tr.append("<td>" + "goods_type" + "</td>");
+    tr.append("<td>" + "name_cn" + "</td>");
+    tr.append("<td>" + "name_en" + "</td>");
+    tr.append("<td>" + "amount" + "</td>");
+    tr.append("<td>" + "amount_unit" + "</td>");
+    tr.append("<td>" + "weight" + "</td>");
+    tr.append("<td>" + "weight_unit" + "</td>");
+    tr.append("<td>" + "value" + "</td>");
+    $('#myTable tbody').append(tr);
+
+    for (var i = 0; i < data.length; i++) {
+        tr = $('<tr/>');
+        tr.append("<td>" + data[i]._id + "</td>");
+        tr.append("<td>" + data[i].country + "</td>");
+        tr.append("<td>" + data[i].goods_type + "</td>");
+        tr.append("<td>" + data[i].name_cn + "</td>");
+        tr.append("<td>" + data[i].name_en + "</td>");
+        tr.append("<td>" + data[i].amount + "</td>");
+        tr.append("<td>" + data[i].amount_unit + "</td>");
+        tr.append("<td>" + data[i].weight + "</td>");
+        tr.append("<td>" + data[i].weight_unit + "</td>");
+        tr.append("<td>" + data[i].value + "</td>");
+        $('#myTable tbody').append(tr);
+        // console.log('data[i].name_cn: ' + data[i].name_cn);
+    }
+
+
+});
+
+
+</script>
+
+<body>
+    <h1>Hello Export Market!</h1>
+    <br/>
+    <table id="myTable">
+      <tbody>
+      </tbody>
+    </table>
+
+</body>
+
+</html>
